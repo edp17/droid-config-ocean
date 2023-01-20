@@ -68,7 +68,7 @@ Requires: jolla-devicelock-daemon-encsfa
 #Requires: sailfish-device-encryption
 
 # For GPS
-Requires: geoclue-provider-hybris
+Requires: geoclue-provider-hybris-binder
 
 # Telephony (RIL sockets)
 Requires: ofono-ril-binder-plugin
