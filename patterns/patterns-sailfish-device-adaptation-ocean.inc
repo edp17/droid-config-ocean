@@ -73,6 +73,8 @@ Requires: geoclue-provider-hybris
 # Telephony (RIL sockets)
 Requires: ofono-ril-binder-plugin
 Requires: ofono-ril-plugin
+# For Mobile data
+Requires: dummy_netd
 
 # For FM radio on some QCOM devices
 #Requires: qt5-qtmultimedia-plugin-mediaservice-irisradio
