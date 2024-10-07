@@ -33,3 +33,6 @@ service vendor.vibrator-1-0 /vendor/bin/hw/android.hardware.vibrator@1.0-service
 service update_verifier_nonencrypted /system/bin/update_verifier_HYBRIS_DISABLED nonencrypted
 
 service update_verifier /system/bin/update_verifier_HYBRIS_DISABLED ${vold.decrypt}
+
+service time_daemon /vendor/bin/time_daemon_HYBRIS_DISABLED
+    override
