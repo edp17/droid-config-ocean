@@ -70,6 +70,9 @@ Requires: jolla-devicelock-daemon-encsfa
 # For GPS
 Requires: geoclue-provider-hybris-binder
 
+# For Bluetooth
+Requires: bluebinder
+
 # Telephony (RIL sockets)
 Requires: ofono-ril-binder-plugin
 Requires: ofono-ril-plugin
