@@ -1,0 +1,3 @@
+#AUDIOSYSTEM_PASSTHROUGH_TYPE=qti {or af or hw2_0}
+HYBRIS_USE_VENDOR_NAMESPACE=yes
+CONFIG="-n --file=/etc/pulse/arm_droid_default.pa"
