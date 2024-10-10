@@ -47,6 +47,7 @@ Requires: jolla-settings-system-flashlight
 Requires: mce-tools
 Requires: connman-tools
 Requires: yamuisplash
+Requires: cifs-utils
 
 %description -n patterns-sailfish-device-configuration-ocean
 Pattern with packages for ocean configurations
