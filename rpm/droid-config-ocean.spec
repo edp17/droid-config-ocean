@@ -32,6 +32,25 @@ Provides: ofono-configs
 %include patterns/patterns-sailfish-device-adaptation-ocean.inc
 %include patterns/patterns-sailfish-device-configuration-ocean.inc
 
+# Sailfish OS 5.1 DNS migration
+# Replace the obsolete ConnMan resolver symlink with systemd-resolved.
+
+%posttrans
+
+RESOLV_TARGET="$(readlink /etc/resolv.conf 2>/dev/null || :)"
+
+case "$RESOLV_TARGET" in
+    /run/connman/resolv.conf|/var/run/connman/resolv.conf)
+        ln -sfn /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf || :
+        ;;
+    *)
+        # Create the link if it is completely absent.
+        if [ ! -e /etc/resolv.conf ] && [ ! -L /etc/resolv.conf ]; then
+            ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf || :
+        fi
+        ;;
+esac
+
 # IMPORTANT if you want to comment out any macros in your .spec, delete the %
 # sign, otherwise they will remain defined! E.g.:
 #define some_macro "I'll not be defined because I don't have % in front"
